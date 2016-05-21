@@ -11,14 +11,16 @@
  * Дополнительно (не обязательно): Задание взять из Задачи №2.
  */
 
-function someFunction ($operation = '+', $operand1 = 2, $operand2 = 4) {
+function someFunction($operation = '+', $operand1 = 2, $operand2 = 4)
+{
     $args = func_get_args();
     echo eval('return ' . implode($operation, array_slice($args, 1)) . ';') . '<br />' . PHP_EOL;
 }
 
-someFunction ('+', 1, 3, 5);
+someFunction('+', 1, 3, 5);
 
-function someFunction1 (array $operation = ['+'], $operand1 = 2, $operand2 = 4) {
+function someFunction1 (array $operation = ['+'], $operand1 = 2, $operand2 = 4)
+{
     $args = func_get_args();
     $operands = array_slice($args, 1);
 
@@ -43,4 +45,4 @@ function someFunction1 (array $operation = ['+'], $operand1 = 2, $operand2 = 4) 
     }
 }
 
-someFunction1 (['*', '/', '+', '-'], 1, 3, 5);
+someFunction1(['*', '/', '+', '-'], 1, 3, 5);

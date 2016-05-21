@@ -12,7 +12,8 @@
  * одна из которых должна быть задана по умолчанию.
  */
 
-function mySort (array &$operands = []) {
+function mySort(array &$operands = [])
+{
     foreach ($operands as $key => $value) {
         $current = $operands[$key];
         $next = @$operands[$key + 1];
@@ -26,9 +27,12 @@ function mySort (array &$operands = []) {
 
 $a = [1, 22, 5, 66, 3, 57];
 
-echo '<pre>'; print_r(mySort($a)); echo '</pre>';
+echo '<pre>';
+print_r(mySort($a)); //Одна строка, одно действие
+echo '</pre>';
 
-function mySort1 (array &$operands = [], $funcName = 'a') {
+function mySort1(array &$operands = [], $funcName = 'a')
+{
     foreach ($operands as $key => $value) {
         $current = $operands[$key];
         $next = @$operands[$key + 1];
@@ -39,15 +43,16 @@ function mySort1 (array &$operands = [], $funcName = 'a') {
     }
     return $operands;
 }
-
-function a ($a, $b) {
+//Очень плохое название для функции
+function a($a, $b)
+{
     return $a > $b;
 }
-
-function b ($a, $b) {
+//Очень плохое название для функции
+function b($a, $b) {
     return $a < $b;
 }
 
-echo '<pre>'; print_r(mySort1($a, 'a')); echo '</pre><br />' . PHP_EOL;
+echo '<pre>'; print_r(mySort1($a, 'a')); echo '</pre><br />' . PHP_EOL; //одна строка, одно действие
 
 echo '<pre>'; print_r(mySort1($a, 'b')); echo '</pre><br />' . PHP_EOL;

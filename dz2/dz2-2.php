@@ -14,13 +14,15 @@
  * результатов.
  */
 
-function someFunction (array $operands = [2, 2], $operation = '+') {
+function someFunction(array $operands = [2, 2], $operation = '+')
+{
     echo eval('return ' . implode($operation, $operands) . ';') . '<br />' . PHP_EOL;
 }
 
-someFunction ([1, 3, 5], '+');
+someFunction([1, 3, 5], '+');
 
-function someFunction1 (array $operands = [2, 2], array $operation = ['+']) {
+function someFunction1(array $operands = [2, 2], array $operation = ['+'])
+{
     if (count($operands) < 2) {
         die('Количество операндов должно быть больше 1!');
     }
@@ -42,4 +44,4 @@ function someFunction1 (array $operands = [2, 2], array $operation = ['+']) {
     }
 }
 
-someFunction1 ([1, 3, 5], ['*', '/', '+', '-']);
+someFunction1([1, 3, 5], ['*', '/', '+', '-']);

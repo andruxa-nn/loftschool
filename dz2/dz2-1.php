@@ -11,10 +11,12 @@
 
 $a = ['выводить', 'каждую', 'строку', 'в', 'отдельном', 'параграфе'];
 
-function render (array $strings) {
+function render(array $strings) //в PHP принято не ставить пробел после названия функции
+{
+    //а так же переносить открывающую скобку на новую линию
     foreach ($strings as $value) {
         echo '<p>' . str_repeat($value . ' ', rand(1, 5)) . '</p>' . PHP_EOL;
     }
 }
 
-render ($a);
+render($a); //аналогично

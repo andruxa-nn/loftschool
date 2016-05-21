@@ -23,7 +23,7 @@ function isPalindrome ($str) {
 }
 
 echo '<pre>';
-print_r(isPalindrome('A rosa upala na lapu azora'));
+print_r(isPalindrome('A rosa upala na lapu azora')); //Не работает, всегда выдает что палиндром
 echo '</pre>';
 
 function isPalindromes($str) {

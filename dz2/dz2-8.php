@@ -49,4 +49,4 @@ function five($array, $string) {
     return $array[0]($string);
 }
 
-echo four(3, 'Пал, а норов худ и дух ворона лап');
+echo five(['a', 'b', 'c'], 'Пал, а норов худ и дух ворона лап');
