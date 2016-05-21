@@ -13,7 +13,8 @@
  * удовлетворяющее условию.
  */
 
-function recoursive ($a, $b) {
+function recoursive($a, $b)
+{
     if ($a % 2) {
         echo $a . "<br />";
     }
@@ -25,20 +26,21 @@ function recoursive ($a, $b) {
 recoursive(10, 35);
 echo '<br />' . PHP_EOL;
 
-function recoursive1 ($a, $b, $func) {
+function recoursive1($a, $b, $func)
+{
     if ($func($a)) {
         echo $a . "<br />";
     }
     if ($a < $b) {
-        recoursive1 ($a + 1, $b, $func);
+        recoursive1($a + 1, $b, $func);
     }
 }
 
-recoursive1(10, 35, function($a) {
+recoursive1(10, 35, function ($a) {
     return $a % 3 == 0;
 });
 echo '<br />' . PHP_EOL;
 
-recoursive1(10, 35, function($a) {
+recoursive1(10, 35, function ($a) {
     return $a <= 20;
 });

@@ -10,7 +10,8 @@
  * трёх символов.
  */
 
-function isPalindrome ($str) {
+function isPalindrome($str)
+{
     if (gettype($str) != 'array') {
         $str = str_split(str_replace(' ', '', strtolower($str)));
     }
@@ -23,10 +24,11 @@ function isPalindrome ($str) {
 }
 
 echo '<pre>';
-print_r(isPalindrome('A rosa upala na lapu azora')); //Не работает, всегда выдает что палиндром
+print_r(isPalindrome('A rosa upala na lapu azora')); // Работает правильно, попробуй добавить вконец 1
 echo '</pre>';
 
-function isPalindromes($str) {
+function isPalindromes($str)
+{
     preg_match_all('~([[a-zA-Z])([a-zA-Z])[a-zA-Z]\2\1~i', $str, $matches1);
     preg_match_all('~([a-zA-Z])([a-zA-Z])([a-zA-Z])\3\2\1~i', $str, $matches2);
     return array_merge($matches1[0], $matches2[0]);

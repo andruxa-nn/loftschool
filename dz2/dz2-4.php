@@ -22,9 +22,9 @@ function tabl($g, $m)
     }
 
     echo '<table border="1">';
-    for ($a = 1, $b = 1; $a <= $g; $a++, $b = 1) { //Это очень странный цикл for. Он абсолютно не читаем стороннему человеку
+    for ($a = 1; $a <= $g; $a++) {
         echo '<tr>';
-        for ( ; $b <= $m; $b++) { //Почему тут нельзя было опрделять $b?
+        for ($b = 1; $b <= $m; $b++) { //Почему тут нельзя было опрделять $b?
             echo '<td>' . $a * $b . '</td>';
         }
         echo '</tr>';
@@ -34,7 +34,8 @@ function tabl($g, $m)
 
 tabl(2, 4);
 
-function tablRand() {
+function tablRand()
+{
     tabl(mt_rand(2, 10), mt_rand(2, 10));
 }
 

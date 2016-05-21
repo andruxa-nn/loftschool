@@ -19,7 +19,7 @@ function someFunction($operation = '+', $operand1 = 2, $operand2 = 4)
 
 someFunction('+', 1, 3, 5);
 
-function someFunction1 (array $operation = ['+'], $operand1 = 2, $operand2 = 4)
+function someFunction1(array $operation = ['+'], $operand1 = 2, $operand2 = 4)
 {
     $args = func_get_args();
     $operands = array_slice($args, 1);

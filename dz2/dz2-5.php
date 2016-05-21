@@ -28,7 +28,7 @@ function mySort(array &$operands = [])
 $a = [1, 22, 5, 66, 3, 57];
 
 echo '<pre>';
-print_r(mySort($a)); //Одна строка, одно действие
+print_r(mySort($a));
 echo '</pre>';
 
 function mySort1(array &$operands = [], $funcName = 'a')
@@ -43,16 +43,21 @@ function mySort1(array &$operands = [], $funcName = 'a')
     }
     return $operands;
 }
-//Очень плохое название для функции
+
 function a($a, $b)
 {
     return $a > $b;
 }
-//Очень плохое название для функции
-function b($a, $b) {
+
+function b($a, $b)
+{
     return $a < $b;
 }
 
-echo '<pre>'; print_r(mySort1($a, 'a')); echo '</pre><br />' . PHP_EOL; //одна строка, одно действие
+echo '<pre>';
+print_r(mySort1($a, 'a'));
+echo '</pre><br />' . PHP_EOL;
 
-echo '<pre>'; print_r(mySort1($a, 'b')); echo '</pre><br />' . PHP_EOL;
+echo '<pre>';
+print_r(mySort1($a, 'b'));
+echo '</pre><br />' . PHP_EOL;

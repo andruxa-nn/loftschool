@@ -7,11 +7,11 @@
  * Попытайтесь изменить значение созданной константы. Получилось?
  */
 
-define('name', 'Andrei');
+define('NAME', 'Andrei');
 
-echo defined('name') . "<br />\r"; // true/false constant exists
-echo name . "<br />\r";
+echo defined('NAME') . "<br />\r"; // true/false constant exists
+echo NAME . "<br />\r";
 
-define('name', 'Valera');
+define('NAME', 'Valera');
 
-echo name; // выведет Andrei, т.к. переопределить значение константы нельзя, если не указан 3-й аргумент true функции define
+echo NAME; // выведет Andrei, т.к. переопределить значение константы нельзя, если не указан 3-й аргумент true функции define
