@@ -89,21 +89,6 @@ function getFile($fileName)
     return false;
 }
 
-//function getFile($fileName)
-//{
-//    if ($fileType = getFileType($fileName)) {
-//        $result = [
-//            'name' => $fileName,
-//            'type' => explode('/', $fileType)[0]
-//        ];
-//        if ($result['type'] == 'text') {
-//            $result['body'] = file_get_contents(FILES . $fileName);
-//        }
-//        return $result;
-//    }
-//    return false;
-//}
-
 $days = [
     1 => 'понедельник',
     2 => 'вторник',

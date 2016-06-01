@@ -1,6 +1,6 @@
 <?php
 
-function uploadFile()
+function uploadFile(&$result)
 {
     if (!is_uploaded_file($_FILES['userfile']['tmp_name'])) {
         $result['error'][] = 'Файл не был загружен при помощи HTTP POST';
@@ -14,10 +14,13 @@ function uploadFile()
         $result['error'][] = 'Тип файла может быть изображением или текстом!';
     }
 
-    return copy(
-        $_FILES['userfile']['tmp_name'],
-        FILES . getValidName($_FILES['userfile']['name'])
-    );
+    if (empty($result['error'])) {
+        return copy(
+            $_FILES['userfile']['tmp_name'],
+            FILES . getValidName($_FILES['userfile']['name'])
+        );
+    }
+    return false;
 }
 
 function getValidName($name)
@@ -36,7 +39,7 @@ $result = [
 ];
 
 if (isset($_FILES['userfile'])) {
-    if (uploadFile()) {
+    if (uploadFile($result)) {
         $result['success'][] = 'Файл успешно загружен!';
     } else {
         $result['error'][] = 'Ошибка загрузки файла.';
