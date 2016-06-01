@@ -24,7 +24,7 @@
                                     <? if ($file['type'] == 'image') { ?>
                                     <img src="<?= '/files/' . $file['name']; ?>" />
                                     <? } elseif ($file['type'] == 'text') { ?>
-                                    <?= nl2br($file['body']); ?>
+                                    <?= nl2br($file['text']); ?>
                                     <? } ?>
                                 </div>
                                 <? } elseif (!empty($_REQUEST['file'])) { ?>

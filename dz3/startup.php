@@ -1,7 +1,5 @@
 <?php
 
-//require_once '../vendor/autoload.php';
-
 /**
  * Задача No1
  * Реализовать следующий функционал:
@@ -73,6 +71,38 @@ function getFileType($fileName)
     }
     return false;
 }
+
+function getFile($fileName)
+{
+    if ($fileType = getFileType($fileName)) {
+        $mime = explode('/', $fileType);
+        $result = [
+            'name' => $fileName,
+            'type' => $mime[0],
+            'format' => $mime[1]
+        ];
+        if ($result['type'] == 'text') {
+            $result['text'] = file_get_contents(FILES . $result['name']);
+        }
+        return $result;
+    }
+    return false;
+}
+
+//function getFile($fileName)
+//{
+//    if ($fileType = getFileType($fileName)) {
+//        $result = [
+//            'name' => $fileName,
+//            'type' => explode('/', $fileType)[0]
+//        ];
+//        if ($result['type'] == 'text') {
+//            $result['body'] = file_get_contents(FILES . $fileName);
+//        }
+//        return $result;
+//    }
+//    return false;
+//}
 
 $days = [
     1 => 'понедельник',

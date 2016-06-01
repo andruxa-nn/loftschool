@@ -40,11 +40,27 @@ body{font-size:0.8125em;font-family: Arial,Helvetica,sans-serif;line-height:norm
 .file_read-block .read-body img{max-width:100%;display:block;}
 
 .file_upload-block{padding:15px;}
+.file_upload-block .upload-body{font-size:1.230769231em;color:#151515;}
+.file_upload-block .alert-cont{margin:0 0 15px;}
+.file_upload-block .success{color:green;}
+.file_upload-block .error{color:red;}
 
 .file_edit-block{padding:15px;}
 .file_edit-block .edit-head{margin:0 0 20px;}
 .file_edit-block .edit-head h2{margin:0;display:inline;}
 .file_edit-block .edit-body{font-size:1.230769231em;color:#151515;}
+.file_edit-block .alert-cont{margin:0 0 15px;}
+.file_edit-block .success{color:green;}
+.file_edit-block .error{color:red;}
+.file_edit-block .group-cont{margin:15px 0 0;}
+.file_edit-block .group-cont:first-child{margin:0;}
+.file_edit-block textarea{width:50%;height:250px;}
+
+.file_delete-block{padding:15px;}
+.file_delete-block .delete-body{font-size:1.230769231em;color:#151515;}
+.file_delete-block .alert-cont{margin:0 0 15px;}
+.file_delete-block .success{color:green;}
+.file_delete-block .error{color:red;}
 
 .file_create-block{padding:15px;}
 .file_create-block .create-head{margin:0 0 20px;}

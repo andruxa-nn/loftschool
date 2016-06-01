@@ -6,7 +6,7 @@
 <body>
     <div class="main-wrap">
         <div class="menu-cont">
-            <?= view('menu', ['projectName' => $projectName]); ?>
+            <?= view('menu', ['projectName' => $projectName, 'isAdmin' => $isAdmin]); ?>
         </div>
         <div class="body-cont">
             <div class="wrap-cols">

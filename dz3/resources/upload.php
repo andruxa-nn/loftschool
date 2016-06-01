@@ -6,7 +6,7 @@
 <body>
     <div class="main-wrap">
         <div class="menu-cont">
-            <?= view('menu', ['projectName' => $projectName]); ?>
+            <?= view('menu', ['projectName' => $projectName, 'isAdmin' => $isAdmin]); ?>
         </div>
         <div class="body-cont">
             <div class="wrap-cols">
@@ -17,6 +17,20 @@
 
                             <div class="file_upload-block">
                                 <div class="upload-body">
+                                    <? if (isset($success)) { ?>
+                                        <div class="alert-cont success">
+                                            <? foreach ($success as $value) { ?>
+                                                <?= $value; ?><br />
+                                            <? } ?>
+                                        </div>
+                                    <? } ?>
+                                    <? if (isset($error)) { ?>
+                                        <div class="alert-cont error">
+                                            <? foreach ($error as $value) { ?>
+                                                <?= $value; ?><br />
+                                            <? } ?>
+                                        </div>
+                                    <? } ?>
                                     <form method="post" enctype="multipart/form-data">
                                         <input type="file" name="userfile" />
                                         <input type="submit" value="Отправить" />

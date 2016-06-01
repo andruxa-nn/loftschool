@@ -32,12 +32,14 @@ function getValidName($name)
 $result = [
     'projectName' => PROJECT_NAME,
     'title' => 'Загрузить файл',
-    'isAdmin' => 0
+    'isAdmin' => 1
 ];
 
 if (isset($_FILES['userfile'])) {
     if (uploadFile()) {
-        $result['success'] = 'Файл успешно загружен!';
+        $result['success'][] = 'Файл успешно загружен!';
+    } else {
+        $result['error'][] = 'Ошибка загрузки файла.';
     }
 }
 
