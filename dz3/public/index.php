@@ -2,7 +2,11 @@
 
 require_once '../startup.php';
 
-$actions = ['main', 'read', 'create', 'upload', 'edit', 'download', 'delete'];
+$actions = [
+    'auth', 'main', 'read',
+    'create', 'upload', 'edit',
+    'download', 'delete'
+];
 
 if (
     isset($_REQUEST['page']) &&

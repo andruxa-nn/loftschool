@@ -21,13 +21,15 @@
                                     <? foreach($files as $value) { ?>
                                     <div class="file-item">
                                         <? $file = basename($value['name']); ?>
-                                        <a href="./?page=read&file=<?= $file; ?>" title="Просмотр файла <?= $file; ?>"><?= $file; ?></a>
                                         <? if (isset($isAdmin) && $isAdmin) { ?>
+                                        <a href="./?page=read&file=<?= $file; ?>" title="Просмотр файла <?= $file; ?>"><?= $file; ?></a>
                                         <? if ($value['type'] == 'text') { ?>
                                         <a href="./?page=edit&file=<?= $file; ?>">Редактировать</a>
                                         <? } ?>
                                         <a href="./?page=download&file=<?= $file; ?>">Скачать</a>
                                         <a href="./?page=delete&file=<?= $file; ?>">Удалить</a>
+                                        <? } else { ?>
+                                        <?= $file; ?>
                                         <? } ?>
                                     </div>
                                     <? } ?>

@@ -22,6 +22,6 @@ function getFiles()
 return [
     'projectName' => PROJECT_NAME,
     'title' => 'Просмотр файлов',
-    'isAdmin' => 1,
+    'isAdmin' => isAdmin(),
     'files' => getFiles(),
 ];

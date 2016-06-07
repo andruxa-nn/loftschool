@@ -8,3 +8,4 @@
 <link href="./css/common.css" type="text/css" rel="stylesheet" />
 <link href="./css/page_main.css" type="text/css" rel="stylesheet" />
 <script src="./js/browser-0.4.0.min.js" type="text/javascript"></script>
+<script src="./js/page_main.js" type="text/javascript"></script>

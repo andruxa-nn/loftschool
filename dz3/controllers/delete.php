@@ -1,9 +1,11 @@
 <?php
 
+checkAcess();
+
 $result = [
     'projectName' => PROJECT_NAME,
     'title' => 'Удалить файл',
-    'isAdmin' => 1,
+    'isAdmin' => isAdmin(),
 ];
 
 if (isset($_REQUEST['file']) && file_exists(FILES . $_REQUEST['file'])) {
