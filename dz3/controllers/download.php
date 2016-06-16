@@ -1,9 +1,11 @@
 <?php
 
+checkAcess();
+
 $result = [
     'projectName' => PROJECT_NAME,
     'title' => 'Скачать файл',
-    'isAdmin' => 1,
+    'isAdmin' => isAdmin(),
 ];
 
 if (

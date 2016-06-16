@@ -1,5 +1,7 @@
 <?php
 
+checkAcess();
+
 function uploadFile(&$result)
 {
     if (!is_uploaded_file($_FILES['userfile']['tmp_name'])) {
@@ -23,19 +25,10 @@ function uploadFile(&$result)
     return false;
 }
 
-function getValidName($name)
-{
-    if (file_exists(FILES . $name)) {
-        return time() . '-' . $name;
-    } else {
-        return $name;
-    }
-}
-
 $result = [
     'projectName' => PROJECT_NAME,
     'title' => 'Загрузить файл',
-    'isAdmin' => 1
+    'isAdmin' => isAdmin()
 ];
 
 if (isset($_FILES['userfile'])) {

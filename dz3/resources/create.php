@@ -16,18 +16,38 @@
                             <?= view('service', ['projectName' => $projectName]); ?>
 
                             <div class="file_create-block">
-                                <? if (1 /*isset($file) && $file*/) { ?>
-                                    <div class="create-head">
-                                        <h2>Создать файл</h2>
-                                    </div>
-                                    <div class="create-body">
-                                        Раздел "Создать файл" находится в стадии проектирования.
-                                    </div>
-                                <? } elseif (!empty($_REQUEST['file'])) { ?>
-                                    <div class="create-body">
-                                        Файла с данным именем не существует.
-                                    </div>
-                                <? } ?>
+                                <div class="create-head">
+                                    <h2>Создать файл</h2>
+                                </div>
+                                <div class="create-body">
+                                    <? if (isset($success)) { ?>
+                                        <div class="alert-cont success">
+                                            <? foreach ($success as $value) { ?>
+                                                <?= $value; ?><br />
+                                            <? } ?>
+                                        </div>
+                                    <? } ?>
+                                    <? if (isset($error)) { ?>
+                                        <div class="alert-cont error">
+                                            <? foreach ($error as $value) { ?>
+                                                <?= $value; ?><br />
+                                            <? } ?>
+                                        </div>
+                                    <? } ?>
+                                    <? if (!isset($success)) { ?>
+                                    <form method="post">
+                                        <div class="group-cont">
+                                            <input type="text" name="fileName" value="<?= isset($error) ? $file['name'] : ''; ?>" placeholder="Введите название файла" /> .txt
+                                        </div>
+                                        <div class="group-cont">
+                                            <textarea name="fileBody" placeholder="Введите содержимое файла"><?= isset($error) ? $file['text'] : ''; ?></textarea>
+                                        </div>
+                                        <div class="group-cont">
+                                            <input type="submit" name="send" value="Сохранить" />
+                                        </div>
+                                    </form>
+                                    <? } ?>
+                                </div>
                             </div>
 
                         </div>

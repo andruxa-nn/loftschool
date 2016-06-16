@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="read-body">
                                     <? if ($file['type'] == 'image') { ?>
-                                    <img src="<?= '/files/' . $file['name']; ?>" />
+                                    <img src="<?= '/img/image.php?image=' . $file['name']; ?>" />
                                     <? } elseif ($file['type'] == 'text') { ?>
                                     <?= nl2br($file['text']); ?>
                                     <? } ?>

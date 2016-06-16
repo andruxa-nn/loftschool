@@ -38,12 +38,17 @@
  * только просмотр списка файлов.
  */
 
+session_start();
+
 define('DOCUMENT_ROOT', __DIR__);
 define('CONTROLLERS',   DOCUMENT_ROOT . '/controllers/');
 define('RESOURCES',     DOCUMENT_ROOT . '/resources/');
 define('FILES',         DOCUMENT_ROOT . '/files/');
 define('PUBLIC',        DOCUMENT_ROOT . '/public/');
 define('PROJECT_NAME',  'Редактор файлов');
+define('LOGIN',  'admin');
+define('PASSWORD',  'HlpgldY6sqvYQ');
+define('SALT', 'HlWGdBN9sqjf9GrO5JEt');
 
 function view($nameTemplate, array $variables = [])
 {
@@ -87,6 +92,27 @@ function getFile($fileName)
         return $result;
     }
     return false;
+}
+
+function getValidName($name)
+{
+    if (file_exists(FILES . $name)) {
+        return time() . '-' . $name;
+    } else {
+        return $name;
+    }
+}
+
+function isAdmin()
+{
+    return isset($_SESSION['isAdmin']);
+}
+
+function checkAcess()
+{
+    if (!isAdmin()) {
+        die('Доступ к данному разделу запрещен!');
+    }
 }
 
 $days = [

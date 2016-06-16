@@ -66,6 +66,22 @@ body{font-size:0.8125em;font-family: Arial,Helvetica,sans-serif;line-height:norm
 .file_create-block .create-head{margin:0 0 20px;}
 .file_create-block .create-head h2{margin:0;display:inline;}
 .file_create-block .create-body{font-size:1.230769231em;color:#151515;}
+.file_create-block .alert-cont{margin:0 0 15px;}
+.file_create-block .success{color:green;}
+.file_create-block .error{color:red;}
+.file_create-block .group-cont{margin:15px 0 0;}
+.file_create-block .group-cont:first-child{margin:0;}
+.file_create-block textarea{width:50%;height:250px;}
+
+.file_auth-block{padding:15px;}
+.file_auth-block .auth-head{margin:0 0 20px;}
+.file_auth-block .auth-head h2{margin:0;display:inline;}
+.file_auth-block .auth-body{font-size:1.230769231em;color:#151515;}
+.file_auth-block .alert-cont{margin:0 0 15px;}
+.file_auth-block .success{color:green;}
+.file_auth-block .error{color:red;}
+.file_auth-block .group-cont{margin:15px 0 0;}
+.file_auth-block .group-cont:first-child{margin:0;}
 
 .clear{clear:both;}
 
