@@ -24,9 +24,10 @@ function isPalindrome($str)
 }
 
 echo '<pre>';
-print_r(isPalindrome('A rosa upala na lapu azora')); // Работает правильно, попробуй добавить вконец 1
+print_r(isPalindrome('A rosa upalasdasda na lapu azor2213123a')); // Работает правильно, попробуй добавить вконец 1
 echo '</pre>';
-
+//не работает :(
+//http://joxi.ru/EA4zOvbsD1Q6km
 function isPalindromes($str)
 {
     preg_match_all('~([[a-zA-Z])([a-zA-Z])[a-zA-Z]\2\1~i', $str, $matches1);

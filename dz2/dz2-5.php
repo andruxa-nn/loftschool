@@ -16,7 +16,7 @@ function mySort(array &$operands = [])
 {
     foreach ($operands as $key => $value) {
         $current = $operands[$key];
-        $next = @$operands[$key + 1];
+        $next = @$operands[$key + 1]; //подавление ошибок недопустимо
         if (($current > $next) && $next) {
             array_splice($operands, $key, 2, [$next, $current]);
             mySort($operands);
@@ -35,7 +35,7 @@ function mySort1(array &$operands = [], $funcName = 'a')
 {
     foreach ($operands as $key => $value) {
         $current = $operands[$key];
-        $next = @$operands[$key + 1];
+        $next = @$operands[$key + 1]; //подавление ошибок недопустимо
         if (call_user_func($funcName, $current, $next) && $next) {
             array_splice($operands, $key, 2, [$next, $current]);
             mySort1($operands, $funcName);
