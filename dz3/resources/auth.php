@@ -20,10 +20,11 @@
                                 <h2><?= $isAdmin ? 'Здравствуйте админ!' : 'Вход на сайт'; ?></h2>
                             </div>
                             <div class="auth-body">
+                               <? echo $success ?>
                                 <? if (isset($success)) { ?>
                                     <div class="alert-cont success">
                                         <? foreach ($success as $value) { ?>
-                                            <?= $value; ?><br />
+                                            <?= isset($value) ? $value : null; ?><br />
                                         <? } ?>
                                     </div>
                                     <script type="text/javascript">
@@ -33,9 +34,12 @@
                                 <? if (isset($error)) { ?>
                                     <div class="alert-cont error">
                                         <? foreach ($error as $value) { ?>
-                                            <?= $value; ?><br />
+                                            <?= @$value ?><br />
                                         <? } ?>
                                     </div>
+<!--                                    Здесь у тебя неопроеделенные переменные-->
+<!--                                    можно сделать как я сделал -->
+<!--                                    но лучше таких переменных не обьявлять вобще-->
                                 <? } ?>
                                 <? if (!isset($success)) { ?>
                                     <form method="post">

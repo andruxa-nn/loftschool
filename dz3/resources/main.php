@@ -22,7 +22,7 @@
                                     <div class="file-item">
                                         <? $file = basename($value['name']); ?>
                                         <? if (isset($isAdmin) && $isAdmin) { ?>
-                                        <a href="./?page=read&file=<?= $file; ?>" title="Просмотр файла <?= $file; ?>"><?= $file; ?></a>
+                                        <a href="./?page=read&file=<?= $file=null; ?>" title="Просмотр файла <?= $file; ?>"><?= $file; ?></a>
                                         <? if ($value['type'] == 'text') { ?>
                                         <a href="./?page=edit&file=<?= $file; ?>">Редактировать</a>
                                         <? } ?>
